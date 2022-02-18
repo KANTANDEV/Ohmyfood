@@ -1,0 +1,346 @@
+// Variables
+$primary: #9356dc;
+$secondary: #ff79da;
+$third: #99e2d0;
+$police1: "Roboto", sans-serif;
+$police2: "Shrikhand", cursive;
+// Mixines
+@mixin flex {
+    display: flex;
+}
+@mixin flex-centre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-between {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin no {
+    margin: 0;
+    padding: 0;
+}
+// Base
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    @include no;
+}
+h2 {
+    font-family: $police1;
+}
+h1,
+h3,
+p {
+    @include no;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+// header
+header {
+    @include flex-centre;
+    height: 80px;
+}
+.logoprin img {
+    @include flex-centre;
+    @include no;
+    height: 100%;
+    width: 100%;
+}
+.logoprin {
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+}
+// Main
+// loader
+.loadercont {
+    @include flex-centre;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    visibility: hidden;
+    animation: visibility 3s linear;
+}
+.loader {
+    @include flex-centre;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    border-top-color: $primary;
+    animation: spin 2s linear;
+}
+.loadertitre {
+    font-family: $police2;
+    animation: big 2s linear;
+}
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 7px solid transparent;
+}
+.loader::before {
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-top-color: $secondary;
+    animation: spin 3s linear;
+}
+.loader::after {
+    top: 25px;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    border-top-color: $third;
+    animation: spin 1.5s linear;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes big {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes visibility {
+    0% {
+        display: block;
+        visibility: visible;
+    }
+    100% {
+        display: none;
+        visibility: hidden;
+    }
+}
+// localisation
+.loc {
+    @include flex-centre;
+    height: 50px;
+    background-color: #eaeaea;
+    box-shadow: inset 0px 1px 5px grey;
+}
+.loc-text {
+    font-family: $police1;
+    margin-left: 2%;
+    @include flex;
+}
+// Slogan
+.slogan {
+    height: 250px;
+    background-color: #f6f6f6;
+    @include flex-column;
+    @include flex-centre;
+}
+.slogan-titre,
+.slogan-text {
+    font-family: $police1;
+    text-align: center;
+    width: 80%;
+}
+.slogan-text,
+.slogan-titre {
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+.slogan-btn {
+    border: none;
+    height: 40px;
+    width: 42%;
+    font-weight: lighter;
+    font-family: $police1;
+    color: white;
+    border-radius: 30px;
+    background: linear-gradient(to bottom right, $secondary, $primary);
+
+    &:hover {
+        background: lighten($color:$secondary, $amount: 5%);
+    }
+}
+
+// Fonctionnement
+.titrefonc {
+    padding: 0 2%;
+}
+.fonct {
+    height: 290px;
+    @include flex-column;
+    gap: 20px;
+    align-items: center;
+}
+.card__num {
+    position: relative;
+    right: 10px;
+    width: 20px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: $primary;
+    border-radius: 50%;
+}
+.cardfonct-body {
+    @include flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #f6f6f6;
+    width: 330px;
+    height: 65px;
+    border-radius: 20px;
+}
+.cardfonct-body:hover {
+    background-color: #f5edff;
+
+    i {
+        color: $primary;
+    }
+}
+
+.card__txt {
+    font-family: $police1;
+    font-weight: bold;
+    padding-right: 20px;
+}
+// Restaurant
+.restaurants {
+    padding: 0 2%;
+    width: 100%;
+    background-color: #f6f6f6;
+    @include flex-centre;
+    @include flex-column;
+    gap: 20px;
+}
+.new {
+    z-index: 1;
+    font-family: $police1;
+    font-weight: bold;
+    @include flex-centre;
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #99e2d0;
+    color: #008766;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.titre {
+    align-self: flex-start;
+}
+.cardrest,
+a {
+    position: relative;
+    height: 100%;
+    width: 96%;
+}
+.cardrest img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.cardrest-body {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 70px;
+    @include flex;
+    align-items: center;
+    justify-content: space-between;
+    // gap: 120px;
+    box-shadow: 0px 0px 10px 0px #dcdcdc;
+    border-radius: 0 0 15px 15px;
+}
+.cardrest-txt {
+    height: 100%;
+    @include flex-column;
+    font-family: $police1;
+}
+.card-heart {
+    position: relative;
+    font-weight: lighter;
+    font-size: 30px;
+    height: 30px;
+}
+.card-heart:hover .fas.fa-heart {
+    transform: scale(1.2);
+}
+.far.fa-heart {
+    position: absolute;
+}
+.fas.fa-heart {
+    transform: scale(0);
+    transition-duration: 3s;
+    background: linear-gradient(to bottom left, $primary, $secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+// Footer
+footer {
+    height: 200px;
+    margin-top: 15%;
+    background-color: #535353;
+    color: #ffffff;
+}
+.omfp {
+    font-size: 20px;
+    font-family: $police2;
+    font-weight: lighter;
+}
+.mepfooter {
+    @include flex-column;
+    align-items: left;
+    padding-top: 5%;
+    padding-left: 5%;
+    gap: 10px;
+}
+.foot {
+    @include flex;
+
+    p {
+        padding-left: 2%;
+    }
+}
+// La palette du gôut
+// header
+.menu {
+    margin: 0 10%;
+    @include flex;
+    align-items: center;
+    gap: 60px;
+}
+.menu-logo {
+    font-family: $police2;
+}
+.menu-icon {
+    font-size: 30px;
+}
