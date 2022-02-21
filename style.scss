@@ -36,6 +36,7 @@ body {
 }
 h2 {
     font-family: $police1;
+    @include no;
 }
 h1,
 h3,
@@ -170,7 +171,7 @@ header {
     margin-bottom: 5%;
     margin-top: 2%;
 }
-.slogan-btn {
+.slogan-btn, .btn_cmd{
     border: none;
     height: 40px;
     width: 42%;
@@ -180,14 +181,14 @@ header {
     border-radius: 30px;
     background: linear-gradient(to bottom right, $secondary, $primary);
 
-    &:hover {
+    &:hover{
         background: lighten($color:$secondary, $amount: 5%);
     }
 }
 
 // Fonctionnement
 .titrefonc {
-    padding: 0 2%;
+    padding: 10% 2%;
 }
 .fonct {
     height: 290px;
@@ -332,8 +333,8 @@ footer {
 }
 // La palette du gôut
 // header
-.menu {
-    margin: 0 10%;
+.menu_header {
+    margin: 0 5%;
     @include flex;
     align-items: center;
     gap: 60px;
@@ -342,5 +343,72 @@ footer {
     font-family: $police2;
 }
 .menu-icon {
-    font-size: 30px;
+    font-size: 22px;
+}
+// Main
+.img_menu{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+}
+.menu{
+    width: 90%;
+    position: absolute;
+    top: 350px;
+    background: #f6f6f6;
+    border-radius: 40px 40px 0 0;
+    @include flex-column;
+    padding: 10% 5%;
+    gap: 20px; 
+}
+.menu_mep{
+    @include flex;
+    align-items: center;
+    gap: 50px;
+
+    .menu_titre{
+        font-family: $police2;
+        font-weight: lighter;
+        font-size: 25px;
+    }
+}
+.menu_titre_secondaire{
+    font-family: $police1;
+    color: grey;
+    border-bottom: $third solid 2px;
+    width: 15%;
+}
+.menu_card{
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    border-radius: 15px;
+    padding: 3% 0%;
+    box-shadow: 0px 0px 10px 0px #dcdcdc;
+
+    .menu_card_titre{
+        font-size: 15px;
+        padding-left: 5%;
+    }
+
+}
+.menu_card_txt{
+    @include flex;
+    justify-content:space-between;
+
+    .menu_card_txt_titre{
+        font-family: $police1;
+        color: grey;
+        font-size: 12px;
+        padding-left: 5%;
+    }
+
+    .menu_card_txt_2{
+        font-family: $police1;
+        padding-right: 5%;
+    }
+}
+.btn_cmd{
+    margin: 0 25%;
+    width: 50%;
 }

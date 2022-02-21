@@ -10,6 +10,8 @@ body {
 
 h2 {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -265,7 +267,7 @@ header {
   margin-top: 2%;
 }
 
-.slogan-btn {
+.slogan-btn, .btn_cmd {
   border: none;
   height: 40px;
   width: 42%;
@@ -277,12 +279,12 @@ header {
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
 }
 
-.slogan-btn:hover {
+.slogan-btn:hover, .btn_cmd:hover {
   background: #ff93e1;
 }
 
 .titrefonc {
-  padding: 0 2%;
+  padding: 10% 2%;
 }
 
 .fonct {
@@ -509,8 +511,8 @@ footer {
   padding-left: 2%;
 }
 
-.menu {
-  margin: 0 10%;
+.menu_header {
+  margin: 0 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -525,6 +527,94 @@ footer {
 }
 
 .menu-icon {
-  font-size: 30px;
+  font-size: 22px;
+}
+
+.img_menu {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 350px;
+}
+
+.menu {
+  width: 90%;
+  position: absolute;
+  top: 350px;
+  background: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10% 5%;
+  gap: 20px;
+}
+
+.menu_mep {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+
+.menu_mep .menu_titre {
+  font-family: "Shrikhand", cursive;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.menu_titre_secondaire {
+  font-family: "Roboto", sans-serif;
+  color: grey;
+  border-bottom: #99e2d0 solid 2px;
+  width: 15%;
+}
+
+.menu_card {
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  border-radius: 15px;
+  padding: 3% 0%;
+  -webkit-box-shadow: 0px 0px 10px 0px #dcdcdc;
+          box-shadow: 0px 0px 10px 0px #dcdcdc;
+}
+
+.menu_card .menu_card_titre {
+  font-size: 15px;
+  padding-left: 5%;
+}
+
+.menu_card_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu_card_txt .menu_card_txt_titre {
+  font-family: "Roboto", sans-serif;
+  color: grey;
+  font-size: 12px;
+  padding-left: 5%;
+}
+
+.menu_card_txt .menu_card_txt_2 {
+  font-family: "Roboto", sans-serif;
+  padding-right: 5%;
+}
+
+.btn_cmd {
+  margin: 0 25%;
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */
