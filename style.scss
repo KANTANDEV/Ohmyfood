@@ -336,14 +336,16 @@ footer {
 }
 // La palette du gôut
 // header
-a{
-    width: 10%;
-}
 .menu_header {
   @include flex;
   align-items: center;
   margin-left: 5%;
   gap: 50px;
+
+  a{
+    width: 10%;
+}
+
 }
 .menu-logo {
     font-family: $police2;
