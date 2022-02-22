@@ -48,7 +48,7 @@ a {
     color: inherit;
 }
 // header
-header {
+.header_index{
     @include flex-centre;
     height: 80px;
 }
@@ -171,7 +171,8 @@ header {
     margin-bottom: 5%;
     margin-top: 2%;
 }
-.slogan-btn, .btn_cmd{
+.slogan-btn,
+.btn_cmd {
     border: none;
     height: 40px;
     width: 42%;
@@ -180,9 +181,10 @@ header {
     color: white;
     border-radius: 30px;
     background: linear-gradient(to bottom right, $secondary, $primary);
+    cursor: pointer;
 
-    &:hover{
-        background: lighten($color:$secondary, $amount: 5%);
+    &:hover {
+        background: lighten($color: $secondary, $amount: 5%);
     }
 }
 
@@ -216,6 +218,7 @@ header {
     width: 330px;
     height: 65px;
     border-radius: 20px;
+    cursor: pointer;
 }
 .cardfonct-body:hover {
     background-color: #f5edff;
@@ -256,8 +259,7 @@ header {
 .titre {
     align-self: flex-start;
 }
-.cardrest,
-a {
+.cardrest, a{
     position: relative;
     height: 100%;
     width: 96%;
@@ -290,6 +292,7 @@ a {
     font-weight: lighter;
     font-size: 30px;
     height: 30px;
+    cursor: pointer;
 }
 .card-heart:hover .fas.fa-heart {
     transform: scale(1.2);
@@ -333,11 +336,14 @@ footer {
 }
 // La palette du gôut
 // header
+a{
+    width: 10%;
+}
 .menu_header {
-    margin: 0 5%;
-    @include flex;
-    align-items: center;
-    gap: 60px;
+  @include flex;
+  align-items: center;
+  margin-left: 5%;
+  gap: 50px;
 }
 .menu-logo {
     font-family: $police2;
@@ -346,13 +352,13 @@ footer {
     font-size: 22px;
 }
 // Main
-.img_menu{
+.img_menu {
     position: relative;
     object-fit: cover;
     width: 100%;
     height: 350px;
 }
-.menu{
+.menu {
     width: 90%;
     position: absolute;
     top: 350px;
@@ -360,55 +366,109 @@ footer {
     border-radius: 40px 40px 0 0;
     @include flex-column;
     padding: 10% 5%;
-    gap: 20px; 
+    gap: 20px;
 }
-.menu_mep{
+.menu_entrees,
+.menu_plat,
+.menu_dessert {
+    @include flex-column;
+    gap: 20px;
+}
+.menu_mep {
     @include flex;
     align-items: center;
     gap: 50px;
 
-    .menu_titre{
+    .menu_titre {
         font-family: $police2;
         font-weight: lighter;
         font-size: 25px;
     }
 }
-.menu_titre_secondaire{
+.menu_titre_secondaire {
     font-family: $police1;
     color: grey;
     border-bottom: $third solid 2px;
     width: 15%;
 }
-.menu_card{
+.menu_card {
+    overflow: hidden;
+    @include flex;
+    justify-content: space-between;
     width: 100%;
-    border: 2px solid #f6f6f6;
     border-radius: 15px;
-    padding: 3% 0%;
     box-shadow: 0px 0px 10px 0px #dcdcdc;
+    animation: approg 1s linear;
+    animation-fill-mode: both;
+    cursor: pointer;
 
-    .menu_card_titre{
-        font-size: 15px;
-        padding-left: 5%;
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            animation-delay: 100ms * $i;
+        }
     }
 
+    .menu_card_titre {
+        width: 100%;
+        font-size: 15px;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 }
-.menu_card_txt{
+// ANNIMATION MENU
+@keyframes approg {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.menu_card_txt {
     @include flex;
-    justify-content:space-between;
+    justify-content: space-between;
 
-    .menu_card_txt_titre{
+    .menu_card_txt_titre {
+        width: fit-content;
         font-family: $police1;
         color: grey;
         font-size: 12px;
         padding-left: 5%;
-    }
-
-    .menu_card_txt_2{
-        font-family: $police1;
-        padding-right: 5%;
+        margin: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
-.btn_cmd{
+.menu_card_price {
+    @include flex-centre;
+    font-family: $police1;
+    font-weight: bold;
+    margin: 0 5%;
+}
+.btn_cmd {
     margin: 0 25%;
     width: 50%;
+    cursor: pointer;
+}
+.mep {
+    padding: 3% 0;
+    width: 85%;
+}
+.check {
+    width: 20%;
+    margin-right: -20%;
+    border-radius: 0 15px 15px 0;
+    background-color: #99e2d0;
+    color: white;
+    font-size: 25px;
+    @include flex-centre;
+    transition-duration: 2s;
+}
+.menu_card:hover .check {
+    margin-right: 0;
 }
