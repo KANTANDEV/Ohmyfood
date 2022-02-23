@@ -26,6 +26,9 @@ $police2: "Shrikhand", cursive;
     margin: 0;
     padding: 0;
 }
+@mixin border {
+    border: none;
+}
 // Base
 html {
     height: 100%;
@@ -48,11 +51,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
-main{
+main {
     overflow-x: hidden;
 }
 // header
-.header_index{
+.header_index {
     @include flex-centre;
     height: 80px;
 }
@@ -219,7 +222,7 @@ main{
     gap: 20px;
     align-items: center;
     background-color: #f6f6f6;
-    width: 330px;
+    width: 280px;
     height: 65px;
     border-radius: 20px;
     cursor: pointer;
@@ -245,6 +248,7 @@ main{
     @include flex-centre;
     @include flex-column;
     gap: 20px;
+    padding-bottom: 15%;
 }
 .new {
     z-index: 1;
@@ -261,9 +265,11 @@ main{
     top: 10px;
 }
 .titre {
+    padding-top: 15%;
     align-self: flex-start;
 }
-.cardrest, a{
+.cardrest,
+a {
     position: relative;
     height: 100%;
     width: 96%;
@@ -328,7 +334,6 @@ footer {
     padding-top: 5%;
     padding-left: 5%;
     gap: 10px;
-    margin-top: 15%;
 }
 .foot {
     @include flex;
@@ -340,15 +345,14 @@ footer {
 // La palette du gôut
 // header
 .menu_header {
-  @include flex;
-  align-items: center;
-  margin-left: 5%;
-  gap: 50px;
+    @include flex;
+    align-items: center;
+    margin-left: 5%;
+    gap: 50px;
 
-  a{
-    width: 10%;
-}
-
+    a {
+        width: 10%;
+    }
 }
 .menu-logo {
     font-family: $police2;
@@ -369,7 +373,7 @@ footer {
     margin-top: -5rem;
     z-index: 1;
     background: #f6f6f6;
-    border-radius:40px 40px 0 0;
+    border-radius: 40px 40px 0 0;
     @include flex-column;
     padding: 10% 5%;
     gap: 20px;
@@ -384,7 +388,7 @@ footer {
     @include flex;
     align-items: center;
     justify-content: space-between;
-   
+
     .menu_titre {
         font-family: $police2;
         font-weight: lighter;
@@ -478,10 +482,109 @@ footer {
 .menu_card:hover .check {
     margin-right: 0;
 }
-.mepfooter1{
+.mepfooter1 {
     margin-top: 0;
     @include flex-column;
     padding-top: 5%;
     padding-left: 5%;
     gap: 10px;
+}
+// Media
+@media all and (min-width: 768px) and (max-width: 2000px) {
+    .fonct {
+        margin-left: 5%;
+        align-items: flex-start;
+    }
+    .titrefonc {
+        padding: 5% 2%;
+    }
+    .restaurants {
+        gap: 50px;
+    }
+    .slogan-btn,
+    .btn_cmd {
+        width: 250px;
+    }
+    .slogan-text {
+        margin-bottom: 2%;
+    }
+    .cardrest img {
+        height: 350px;
+    }
+    .titre {
+        padding-top: 5%;
+    }
+    .mepfooter {
+        width: 100%;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-around;
+        padding-left: 0%;
+
+        .foot {
+            gap: 10px;
+            align-items: center;
+        }
+
+        a {
+            width: auto;
+        }
+    }
+}
+@media all and (min-width: 500px) and (max-width: 700px){
+        .menu_header {
+        gap: 100px;
+    }
+}
+@media all and (min-width: 700px) and (max-width: 1000px) {
+    .menu_titre_secondaire{
+        @include border;
+    }
+    .btn_cmd {
+        margin: 5% 30%;
+    }
+    .menu_header {
+        gap: 200px;
+    }
+}
+@media all and (min-width: 1000px) and (max-width: 1400px) {
+    .menu_titre_secondaire{
+        @include border;
+    }
+    .btn_cmd {
+        margin: 5% 37%;
+    }
+    .menu_header {
+        gap: 300px;
+    }
+}
+@media all and (min-width: 1400px) and (max-width: 1700px) {
+    .menu_titre_secondaire{
+        @include border;
+    }
+    .btn_cmd {
+        margin: 5% 37%;
+    }
+    .menu_header {
+        gap: 500px;
+    }
+}
+@media all and (min-width: 1700px) and (max-width: 2000px) {
+    .menu_titre_secondaire{
+        @include border;
+    }
+    .btn_cmd {
+        margin: 5% 40%;
+    }
+    .menu_header {
+        gap: 550px;
+    }
+}
+@media all and (min-width: 1900px) and (max-width: 2000px) {
+    .menu_titre_secondaire{
+        @include border;
+    }
+    .menu_header {
+        gap: 650px;
+    }
 }

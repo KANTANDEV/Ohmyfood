@@ -338,7 +338,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   background-color: #f6f6f6;
-  width: 330px;
+  width: 280px;
   height: 65px;
   border-radius: 20px;
   cursor: pointer;
@@ -377,6 +377,7 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+  padding-bottom: 15%;
 }
 
 .new {
@@ -403,11 +404,13 @@ main {
 }
 
 .titre {
+  padding-top: 15%;
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
 
-.cardrest, a {
+.cardrest,
+a {
   position: relative;
   height: 100%;
   width: 96%;
@@ -504,7 +507,6 @@ footer {
   padding-top: 5%;
   padding-left: 5%;
   gap: 10px;
-  margin-top: 15%;
 }
 
 .foot {
@@ -758,5 +760,116 @@ footer {
   padding-top: 5%;
   padding-left: 5%;
   gap: 10px;
+}
+
+@media all and (min-width: 768px) and (max-width: 2000px) {
+  .fonct {
+    margin-left: 5%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .titrefonc {
+    padding: 5% 2%;
+  }
+  .restaurants {
+    gap: 50px;
+  }
+  .slogan-btn,
+  .btn_cmd {
+    width: 250px;
+  }
+  .slogan-text {
+    margin-bottom: 2%;
+  }
+  .cardrest img {
+    height: 350px;
+  }
+  .titre {
+    padding-top: 5%;
+  }
+  .mepfooter {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-left: 0%;
+  }
+  .mepfooter .foot {
+    gap: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mepfooter a {
+    width: auto;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 700px) {
+  .menu_header {
+    gap: 100px;
+  }
+}
+
+@media all and (min-width: 700px) and (max-width: 1000px) {
+  .menu_titre_secondaire {
+    border: none;
+  }
+  .btn_cmd {
+    margin: 5% 30%;
+  }
+  .menu_header {
+    gap: 200px;
+  }
+}
+
+@media all and (min-width: 1000px) and (max-width: 1400px) {
+  .menu_titre_secondaire {
+    border: none;
+  }
+  .btn_cmd {
+    margin: 5% 37%;
+  }
+  .menu_header {
+    gap: 300px;
+  }
+}
+
+@media all and (min-width: 1400px) and (max-width: 1700px) {
+  .menu_titre_secondaire {
+    border: none;
+  }
+  .btn_cmd {
+    margin: 5% 37%;
+  }
+  .menu_header {
+    gap: 500px;
+  }
+}
+
+@media all and (min-width: 1700px) and (max-width: 2000px) {
+  .menu_titre_secondaire {
+    border: none;
+  }
+  .btn_cmd {
+    margin: 5% 40%;
+  }
+  .menu_header {
+    gap: 550px;
+  }
+}
+
+@media all and (min-width: 1900px) and (max-width: 2000px) {
+  .menu_titre_secondaire {
+    border: none;
+  }
+  .menu_header {
+    gap: 650px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
