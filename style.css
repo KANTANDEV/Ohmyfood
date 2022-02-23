@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,10 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+main {
+  overflow-x: hidden;
 }
 
 .header_index {
@@ -354,8 +359,8 @@ a {
 }
 
 .restaurants {
-  padding: 0 2%;
   width: 100%;
+  padding: 0 2%;
   background-color: #f6f6f6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -581,7 +586,9 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .menu_mep .menu_titre {

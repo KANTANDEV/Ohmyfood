@@ -29,6 +29,7 @@ $police2: "Shrikhand", cursive;
 // Base
 html {
     height: 100%;
+    overflow-x: hidden;
 }
 body {
     min-height: 100%;
@@ -46,6 +47,9 @@ p {
 a {
     text-decoration: none;
     color: inherit;
+}
+main{
+    overflow-x: hidden;
 }
 // header
 .header_index{
@@ -235,8 +239,8 @@ a {
 }
 // Restaurant
 .restaurants {
-    padding: 0 2%;
     width: 100%;
+    padding: 0 2%;
     background-color: #f6f6f6;
     @include flex-centre;
     @include flex-column;
@@ -379,8 +383,8 @@ footer {
 .menu_mep {
     @include flex;
     align-items: center;
-    gap: 50px;
-
+    justify-content: space-between;
+   
     .menu_titre {
         font-family: $police2;
         font-weight: lighter;
