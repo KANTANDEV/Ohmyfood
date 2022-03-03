@@ -1,34 +1,8 @@
-// Variables
-$primary: #9356dc;
-$secondary: #ff79da;
-$third: #99e2d0;
-$police1: "Roboto", sans-serif;
-$police2: "Shrikhand", cursive;
-// Mixines
-@mixin flex {
-    display: flex;
-}
-@mixin flex-centre {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@mixin flex-between {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-}
-@mixin no {
-    margin: 0;
-    padding: 0;
-}
-@mixin border {
-    border: none;
-}
+// Import scss
+@import "./utils/variables";
+@import "./utils/mixines";
+// Police
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 // Base
 html {
     height: 100%;
@@ -59,16 +33,14 @@ main {
     @include flex-centre;
     height: 80px;
 }
-.logoprin img {
+.logoprin {
+    font-family: $police2;
     @include flex-centre;
     @include no;
-    height: 100%;
-    width: 100%;
-}
-.logoprin {
-    justify-content: center;
-    height: 40px;
-    width: 200px;
+
+    a {
+        width: 100%;
+    }
 }
 // Main
 // loader
@@ -154,11 +126,18 @@ main {
     height: 50px;
     background-color: #eaeaea;
     box-shadow: inset 0px 1px 5px grey;
-}
-.loc-text {
-    font-family: $police1;
-    margin-left: 2%;
-    @include flex;
+
+    .loc-text {
+        font-family: $police1;
+        font-weight: bold;
+        color: $greya;
+        margin-left: 2%;
+        @include flex;
+    }
+
+    .fa-solid {
+        color: $greya;
+    }
 }
 // Slogan
 .slogan {
@@ -180,24 +159,29 @@ main {
 }
 .slogan-btn,
 .btn_cmd {
+    font-weight: bold;
+    font-size: 1.1rem;
     border: none;
     height: 40px;
-    width: 42%;
+    padding: 0.5rem 1.5rem;
+    // width: 42%;
     font-weight: lighter;
     font-family: $police1;
     color: white;
     border-radius: 30px;
     background: linear-gradient(to bottom right, $secondary, $primary);
     cursor: pointer;
+    box-shadow: 0.25rem 0.25rem 10px grey;
 
     &:hover {
-        background: lighten($color: $secondary, $amount: 5%);
+        background: lighten($color: $secondary, $amount: 2%);
+        box-shadow: 0.25rem 0.25rem 10px black;
     }
 }
 
 // Fonctionnement
 .titrefonc {
-    padding: 10% 2%;
+    padding: 10% 5%;
     margin-left: 2%;
 }
 .fonct {
@@ -223,6 +207,7 @@ main {
     gap: 20px;
     align-items: center;
     background-color: #f6f6f6;
+    color: grey;
     width: 280px;
     height: 65px;
     border-radius: 20px;
@@ -237,6 +222,7 @@ main {
 }
 
 .card__txt {
+    color: black;
     font-family: $police1;
     font-weight: bold;
     padding-right: 20px;
@@ -244,7 +230,7 @@ main {
 // Restaurant
 .restaurants {
     width: 100%;
-    padding: 0 2%;
+    // padding: 0 2%;
     background-color: #f6f6f6;
     @include flex-centre;
     @include flex-column;
@@ -262,11 +248,11 @@ main {
     background-color: #99e2d0;
     color: #008766;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    bottom: 150px;
 }
 .titre {
-    margin-left: 2%;
+    margin-left: 5%;
     padding-top: 15%;
     align-self: flex-start;
 }
@@ -274,7 +260,7 @@ main {
 a {
     position: relative;
     height: 100%;
-    width: 96%;
+    width: 90%;
 }
 .cardrest img {
     object-fit: cover;
@@ -323,7 +309,7 @@ a {
 // Footer
 footer {
     height: 200px;
-    background-color: #535353;
+    background-color: $greya;
     color: #ffffff;
 }
 .omfp {
@@ -333,8 +319,8 @@ footer {
 }
 .mepfooter {
     @include flex-column;
-    padding-top: 5%;
-    padding-left: 5%;
+    padding-top: 30px;
+    padding-left: 30px;
     gap: 10px;
 }
 .foot {
@@ -344,10 +330,9 @@ footer {
         padding-left: 15px;
     }
 
-    .foot_text{
+    .foot_text {
         padding-left: 10px;
     }
-
 }
 // La palette du gôut
 // header
@@ -487,24 +472,39 @@ footer {
     @include flex-centre;
     transition-duration: 1s;
 }
+
+@keyframes checke {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .menu_card:hover .check {
     margin-right: 0;
+    i {
+        animation: checke 0.5s linear;
+    }
 }
 .mepfooter1 {
     margin-top: 0;
     @include flex-column;
-    padding-top: 5%;
-    padding-left: 5%;
+    padding-top: 30px;
+    padding-left: 30px;
     gap: 10px;
 }
 // Media
-@media all and (min-width: 768px) and (max-width: 2000px) {
+@media all and (min-width: 768px) and (max-width: 1000px) {
     .fonct {
         margin-left: 5%;
         align-items: flex-start;
     }
     .titrefonc {
-        padding: 5% 2%;
+        padding: 10% 2%;
     }
     .restaurants {
         gap: 50px;
@@ -512,6 +512,11 @@ footer {
     .slogan-btn,
     .btn_cmd {
         width: 250px;
+    }
+    .new {
+        font-size: 1.5rem;
+        bottom: 300px;
+        width: 150px;
     }
     .slogan-text {
         margin-bottom: 2%;
@@ -534,71 +539,287 @@ footer {
             align-items: center;
         }
 
+        p,
+        a {
+            @include flex;
+            align-items: center;
+        }
+
         a {
             width: auto;
         }
     }
+    .menu_titre_secondaire {
+        border-bottom: none;
+    }
 }
-@media all and (min-width: 500px) and (max-width: 700px){
-        .menu_header {
+@media all and (min-width: 1001px) {
+    h2 {
+        font-size: 35px;
+    }
+    .slogan {
+        height: 360px;
+    }
+    .cardfonct-body {
+        gap: 60px;
+        width: 480px;
+    }
+    .restaurants {
+        gap: 80px;
+    }
+    .cardrest img {
+        height: 400px;
+    }
+    .new {
+        font-size: 1.5rem;
+        bottom: 330px;
+        width: 150px;
+    }
+    .mepfooter,
+    .mepfooter1 {
+        width: 100%;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-around;
+        padding-left: 0%;
+
+        .foot {
+            gap: 10px;
+            align-items: center;
+        }
+
+        p,
+        a {
+            @include flex;
+            align-items: center;
+        }
+
+        a {
+            width: auto;
+        }
+    }
+    .menu_header {
+        gap: 30%;
+    }
+    .menu_titre_secondaire {
+        border-bottom: none;
+    }
+}
+@media all and (min-width: 1400px) {
+    .logoprin,
+    .menu-logo {
+        font-size: 60px;
+    }
+    .loc {
+        font-size: 25px;
+    }
+    .omfp{
+        font-size: 45px;
+    }
+    .mepfooter,
+    .mepfooter1 {
+        a {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 25px;
+        }
+    }
+    .foot {
+        font-size: 25px;
+    }
+    .slogan {
+        height: 500px;
+
+        .slogan-titre {
+            font-size: 40px;
+        }
+
+        .slogan-text {
+            font-size: 20px;
+        }
+    }
+
+    .slogan-btn,
+    .btn_cmd {
+        height: 60px;
+    }
+    .titrefonc {
+        padding: 2%;
+    }
+    .fonct {
+        flex-direction: row;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    .cardfonct-body {
+        gap: 50px;
+        width: 400px;
+        font-size: 20px;
+    }
+    .cardrest-body {
+        font-size: 22px;
+        height: 100px;
+    }
+    .cardrest img {
+        height: 600px;
+    }
+    .menu-icon{
+        font-size: 40px;
+    }
+    .new {
+        bottom: 520px;
+    }
+    .img_menu{
+        height: 500px;
+    }
+    .menu{
+        gap: 50px;
+    }
+    .menu_mep .menu_titre {
+        font-size: 35px;
+    }
+    .menu_titre_secondaire {
+        font-size: 22px;
+    }
+    .menu_titre_secondaire {
+        border-bottom: none;
+    }
+    .menu_card {
+        .menu_card_titre {
+            font-size: 20px;
+        }
+    }
+}
+@media all and (min-width: 2100px){
+    .slogan{
+        height: 650px;
+
+        .slogan-titre {
+            font-size: 50px;
+        }
+
+        .slogan-text {
+            font-size: 30px;
+        }
+    }
+    .header_index{
+        height: 150px;
+    }
+    .logoprin,
+    .menu-logo {
+        font-size: 80px;
+    }
+    .loc {
+        height: 100px;
+        font-size: 35px;
+    }
+    .mepfooter,
+    .mepfooter1 {
+        a {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 35px;
+        }
+    }
+    .foot {
+        font-size: 35px;
+    }
+    
+    .slogan-btn, {
+        font-size: 30px;
+        height: 70px;
+        width: 400px;
+    }
+    .btn_cmd{
+        font-size: 45px;
+        height: 70px;
+    }
+    .titrefonc {
+        font-size: 50px;
+        padding: 2%;
+    }
+    .fonct {
+        height: 500px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    .cardfonct-body {
+        gap: 50px;
+        width: 700px;
+        height: 100px;
+        font-size: 35px;
+    }
+    .card__num{
+        height: 50px;
+        width: 50px;
+        right: 30px;
+    }
+    .titre{
+        font-size: 50px;
+    }
+    .cardrest-body {
+        font-size: 35px;
+        height: 140px;
+
+        .card-heart{
+            height: 120px;
+            font-size: 60px;
+        }
+
+    }
+    .cardrest img {
+        height:850px;
+    }
+    .restaurants{
+        gap: 200px;
+        padding-bottom: 10%;
+    }
+    .new {
+        bottom: 715px;
+        height: 100px;
+        width: 250px;
+        font-size: 2.5rem;
+    }
+    .img_menu{
+        height: 750px;
+    }
+    .menu{
         gap: 100px;
     }
-}
-@media all and (min-width: 700px) and (max-width: 1000px) {
-    .menu_titre_secondaire{
-        @include border;
+    .menu-icon{
+        font-size: 60px;
     }
-    .btn_cmd {
-        margin: 5% 30%;
+    .menu_mep .menu_titre {
+        font-size: 50px;
     }
-    .menu_header {
-        gap: 200px;
+    .card-heart{
+        font-size: 60px;
     }
-}
-@media all and (min-width: 1000px) and (max-width: 1400px) {
-    .menu_titre_secondaire{
-        @include border;
+    .menu_titre_secondaire {
+        font-size: 30px;
     }
-    .btn_cmd {
-        margin: 5% 37%;
+    .menu_titre_secondaire {
+        border-bottom: none;
     }
-    .menu_header {
-        gap: 300px;
+    .menu_card {
+        .menu_card_titre {
+            font-size: 35px;
+        }
+        .menu_card_txt_titre{
+            font-size: 25px;
+        }
+        .menu_card_price{
+            font-size: 30px;
+        }
     }
-}
-@media all and (min-width: 1400px) and (max-width: 1700px) {
-    .menu_titre_secondaire{
-        @include border;
-    }
-    .btn_cmd {
-        margin: 5% 37%;
-    }
-    .menu_header {
-        gap: 500px;
-    }
-    .slogan{
-        height: 290px;
-    }
-}
-@media all and (min-width: 1700px) and (max-width: 2000px) {
-    .menu_titre_secondaire{
-        @include border;
-    }
-    .btn_cmd {
-        margin: 5% 40%;
-    }
-    .menu_header {
-        gap: 550px;
-    }
-}
-@media all and (min-width: 1900px) and (max-width: 2000px) {
-    .menu_titre_secondaire{
-        @include border;
-    }
-    .menu_header {
-        gap: 650px;
-    }
-    .slogan{
-        height: 400px;
+    .check{
+        font-size: 50px;
     }
 }
