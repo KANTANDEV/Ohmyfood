@@ -318,6 +318,7 @@ footer {
     font-weight: lighter;
 }
 .mepfooter {
+    font-family: $police1;
     @include flex-column;
     padding-top: 30px;
     padding-left: 30px;
@@ -491,6 +492,7 @@ footer {
     }
 }
 .mepfooter1 {
+    font-family: $police1;
     margin-top: 0;
     @include flex-column;
     padding-top: 30px;

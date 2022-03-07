@@ -508,6 +508,7 @@ footer {
 }
 
 .mepfooter {
+  font-family: "Roboto", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -800,6 +801,7 @@ footer {
 }
 
 .mepfooter1 {
+  font-family: "Roboto", sans-serif;
   margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
