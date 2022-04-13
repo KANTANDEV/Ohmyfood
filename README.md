@@ -89,3 +89,4 @@ la droite vers la gauche. Pour cette première version, l’effet peut apparaît
 sur desktop au lieu du clic. Si l’intitulé du plat est trop long, il devra être rogné avec
 des points de suspension. Un exemple de l’effet attendu est fourni.
 
+lien du site : https://kantandev.github.io/quentinvansteenwinkel_3_17022022/
